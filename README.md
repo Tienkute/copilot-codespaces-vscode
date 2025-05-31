@@ -1,5 +1,30 @@
-<header>
+#include <iostream>
+using namespace std;
 
-![Deprecation Badge](https://img.shields.io/badge/Skills-Deprecated-333?logo=github&labelColor=454c54&color=bf8700)
+// Hàm hoán vị sử dụng con trỏ
+void hoanVi(float* x, float* y) {
+    float temp = *x;
+    *x = *y;
+    *y = temp;
+}
 
-This course has been deprecated. Please visit the [Getting Started with GitHub Copilot](https://github.com/skills/getting-started-with-github-copilot) exercise for the newest learning content.
+int main() {
+    float a, b;
+
+    // Nhập hai số thực
+    cout << "Nhap so thuc a: ";
+    cin >> a;
+    cout << "Nhap so thuc b: ";
+    cin >> b;
+
+    // In ra trước khi hoán vị
+    cout << "Truoc khi hoan vi: a = " << a << ", b = " << b << endl;
+
+    // Gọi hàm hoán vị
+    hoanVi(&a, &b);
+
+    // In ra sau khi hoán vị
+    cout << "Sau khi hoan vi: a = " << a << ", b = " << b << endl;
+
+    return 0;
+}
